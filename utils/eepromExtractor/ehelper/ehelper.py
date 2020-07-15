@@ -83,8 +83,7 @@ def dumpRaw(d):
 def CRC(d):
 #    crc16 = crcmod.mkCrcFun(0x18005, initCrc=0xffff, rev=True)
     crc16 = crcmod.predefined.mkCrcFun('modbus')
-    crc =  crc16(dumpRaw(d))
-    return crc;
+    return crc16(dumpRaw(d));
 
 def checkAllCRC(x):
     checkCRC(x, 'calibration')
